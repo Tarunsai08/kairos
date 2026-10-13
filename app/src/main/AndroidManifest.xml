@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.READ_CALENDAR" />
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+ <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+ <uses-permission android:name="com.tarun.kaizen.permission.READ_WELLBEING" />
+ <queries><package android:name="com.tarun.kaizen" /></queries>
+ <application android:name=".KairosApplication" android:icon="@drawable/ic_kairos" android:label="Kairos" android:theme="@style/Theme.Kairos" android:allowBackup="true" android:fullBackupContent="@xml/backup_rules" android:dataExtractionRules="@xml/data_extraction_rules">
+  <activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+  <receiver android:name=".integration.KaizenCheckinReceiver" android:exported="true" android:permission="com.tarun.kaizen.permission.READ_WELLBEING"><intent-filter><action android:name="com.tarun.kaizen.action.CHECKIN_UPDATED"/></intent-filter></receiver>
+  <receiver android:name=".reminders.AlarmReceiver" android:exported="false"/>
+  <receiver android:name=".reminders.ClockChangeReceiver" android:exported="true"><intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/><action android:name="android.intent.action.TIMEZONE_CHANGED"/><action android:name="android.intent.action.TIME_SET"/><action android:name="android.intent.action.MY_PACKAGE_REPLACED"/><action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED"/></intent-filter></receiver>
+  <receiver android:name=".widgets.NowWidgetReceiver" android:exported="true"><intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter><meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_now"/></receiver>
+  <receiver android:name=".widgets.TodayWidgetReceiver" android:exported="true"><intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter><meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_today"/></receiver>
+  <receiver android:name=".widgets.DeadlinesWidgetReceiver" android:exported="true"><intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter><meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_deadlines"/></receiver>
+ </application>
+</manifest>

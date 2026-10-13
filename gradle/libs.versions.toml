@@ -1,0 +1,38 @@
+[versions]
+agp = "9.4.1"
+kotlin = "2.4.21"
+ksp = "2.3.12"
+hilt = "2.60.1"
+room = "2.8.5"
+compose = "2026.09.00"
+[libraries]
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose" }
+activity = { module = "androidx.activity:activity-compose", version = "1.13.0" }
+lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-compose", version = "2.11.0" }
+lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.11.0" }
+material = { module = "androidx.compose.material3:material3" }
+ui = { module = "androidx.compose.ui:ui" }
+ui-tooling = { module = "androidx.compose.ui:ui-tooling-preview" }
+room = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+hilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+datastore = { module = "androidx.datastore:datastore-preferences", version = "1.2.1" }
+work = { module = "androidx.work:work-runtime-ktx", version = "2.12.0" }
+glance = { module = "androidx.glance:glance-appwidget", version = "1.2.0" }
+serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.11.0" }
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.11.0" }
+junit = { module = "junit:junit", version = "4.13.2" }
+ui-test = { module = "androidx.compose.ui:ui-test-junit4" }
+ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+test-runner = { module = "androidx.test:runner", version = "1.7.0" }
+test-core = { module = "androidx.test:core", version = "1.7.0" }
+turbine = { module = "app.cash.turbine:turbine", version = "1.2.1" }
+[plugins]
+android = { id = "com.android.application", version.ref = "agp" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
